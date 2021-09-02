@@ -113,7 +113,7 @@ class GifSearch extends PureComponent {
           this.providerLogo = props.providerLogo;
       }
       this.gifType = gif_types.GIF;
-      var currentGifType = gif_types.GIF;
+      var currentGifType = gif_types.STICKER;
       if (props.gifType != null) {
           if (props.gifType == gif_types.STICKER) {
               this.gifType = props.gifType
@@ -405,7 +405,8 @@ class GifSearch extends PureComponent {
       (          
         <View style={[this.styles.view, this.props.style]}>
 
-          <View style={{flexDirection: 'row', alignSelf: 'stretch', alignItems: 'center', justifyContent: 'space-between' }}>
+          <View style={{position:'relative',flexDirection: 'row', alignSelf: 'stretch', alignItems: 'center', justifyContent: 'space-between' }}>
+            {this.props.renderSearchIcon}
             <TextInput
               placeholder={this.state.currentGifType == gif_types.GIF ? (this.placeholderText) : (this.stickersPlaceholderText)}
               placeholderTextColor={this.placeholderTextColor}
